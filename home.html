@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>IEEE-HKN Underground Course Review</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div style="display: flex; align-items: center; justify-content: center; padding: 10px;">
+        <h1>IEEE-HKN Underground Course Review</h1>
+        <img src="hkn.png" alt="HKN" style="height: 150px;">
+    </div>
+    
+    <h3>Use the search bar below to select a course and see ratings & comments from students who have taken it!</h3>
+    <br>
+    <button type="button" class="submit-review-button" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSd_cPP4uQnj6Pn5ReupyZIHDpUFRn1wyfWwaZlb3qW_2_qD6Q/viewform?usp=sharing&ouid=107632267153460438101', '_blank', 'noopener')">Submit reviews of your own!</button>
+
+    <br><br>
+
+    <div class="course-search-column">
+        <div class="course-search-row">
+            <label for="courseInput">Search for a course</label>
+            <div class="course-dropdown-container">
+                <input
+                    id="courseInput"
+                    type="text"
+                    placeholder="e.g. EE14 Embedded Systems..."
+                    oninput="filterCourses(this.value)"
+                    onfocus="filterCourses(this.value)"
+                    autocomplete="off"
+                />
+                <button onclick="clearSearch()">Clear</button>
+                <ul id="courseDropdown"></ul>
+            </div>
+        </div>
+        <div id="courseResults"></div>
+    </div>
+
+    <footer style="text-align: center; margin-top:200px; padding-top: 20px; border-top: 1px solid#ccc;">
+        <p>This site is maintained by Tufts IEEE-HKN to help students make informed decisions about their coursework. Reviews are submitted anonymously by Tufts students.</p>
+        <p>&copy; Tufts HKN-IEEE</p>
+    </footer>
+
+    <!-- Load responses from javascript file -->
+    <script src="responses.js"></script>
+</body>
+</html>
